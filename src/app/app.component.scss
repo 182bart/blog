@@ -1,0 +1,49 @@
+header {
+    font-size: 44px;
+	font-weight: 700;
+	color: #ddd;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+
+nav {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid black;
+  margin: 20px;
+  width: 100%;
+  background-color: #1c74b2;
+  ul {
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 10px;
+      button{
+          background-color:#1c74b2;
+          height: 40px;
+          color: white;
+          border: none;
+          border-right: 1px dashed #0a2b42;
+          float: 17px;
+         
+          cursor: pointer;
+      }
+    }
+  }
+}
+
+
+aside {
+  float: right;
+  border: 1px solid black;
+}
+footer{
+    display: block;
+    border: chartreuse 1px solid;
+    text-align: center;
+    
+}

@@ -1,0 +1,11 @@
+{
+    "Posts": [
+            {"id" : 1,
+            "title" : "post numer 1",
+            "text": "lorem ipsum ...."},
+
+            {"id" : 2,
+            "title" : "post numer 2",
+           "text" : "lorem ipsum ...."}
+    ]
+}
