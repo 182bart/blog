@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../model/post';
+import { BlogServiceService } from 'src/Service/blog-service.service';
 
 @Component({
   selector: 'blg-home',
@@ -8,25 +9,16 @@ import { Post } from '../model/post';
 })
 export class HomeComponent implements OnInit {
 
- 
- Posts: Array<Post> =[];
+ postList ;
+ query: string = '';
 
-
-  constructor() { 
-    this.Posts = [{
-      id : 1,
-      title : 'post Title',
-      text: 'lorem ipsum'
-    },
-    {
-      id : 2,
-      title : 'post Title ',
-      text: 'lorem ipsum '
-        }
-  ]
-  }
+  constructor(public postService: BlogServiceService) { }
 
   ngOnInit(): void {
+    this.updateList();
   }
+  updateList() {
+    this.postList = this.postService.fetchPost(this.query);
+}
 
 }

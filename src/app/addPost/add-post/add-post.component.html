@@ -1,5 +1,16 @@
 
-<input [(ngModel)]="newPost" type="text" placeholder="tytuł">
-<!-- <textarea [(ngModel)]="newPost.text" name="" id="" cols="30" rows="10"></textarea> -->
-<input type="submit" value="publikuj">
-<button (click)='add()'>publikuj2</button>
+<form [formGroup]="postForm" novalidate> 
+   
+    <label>
+        Title
+    <input type="text"formControlName="Title" >
+    </label>
+
+
+    <label>
+        Text
+    <textarea  cols="30" rows="10" formControlName="Text"></textarea>
+    </label>
+
+    <button (click)='add()'>publikuj</button>
+</form> 

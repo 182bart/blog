@@ -3,15 +3,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlogServiceService } from 'src/Service/blog-service.service';
-import { HttpService } from 'src/Service/http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AddPostComponent } from './addPost/add-post/add-post.component';
 import { OopsComponent } from './oops/oops/oops.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routers';
-import { RemoveListComponent } from './remove list/remove-list/remove-list.component';
-import {FormsModule} from '@angular/Forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -20,16 +20,16 @@ import {FormsModule} from '@angular/Forms';
     HomeComponent,
     AddPostComponent,
     OopsComponent,
-    RemoveListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [BlogServiceService, HttpService],
+  providers: [BlogServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

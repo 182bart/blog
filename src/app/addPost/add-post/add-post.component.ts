@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Post } from 'src/app/model/post';
+import { Component, OnInit} from '@angular/core';
+import { BlogServiceService} from 'src/Service/blog-service.service';
+import { FormGroup, FormBuilder} from '@angular/forms';
+
 
 @Component({
   selector: 'blg-add-post',
@@ -8,20 +10,30 @@ import { Post } from 'src/app/model/post';
 })
 export class AddPostComponent implements OnInit {
 
-  newPost: string;
-  PostList: Array<string>;
-  add(){
-    this.PostList.push(this.newPost);
-    console.log(this.PostList);
-    this.newPost = '';
-  }
+  postForm: FormGroup;
+  showErrors: boolean;
 
 
-
-  constructor() {
-  }
+  constructor(public formBuilder: FormBuilder, public postService: BlogServiceService) {}
 
   ngOnInit(): void {
+    this.postForm = this.formBuilder.group({
+      Title: [''],
+      Text: [''],
+    });
+  }
+
+  add() {
+    if (this.postForm.valid) {
+      const formValue = this.postForm.getRawValue();
+      console.log(formValue);
+      this.postService.savePost(formValue)
+        .then(success => console.log(success))
+        .catch(failure => console.error(failure));
+    } else {
+      this.showErrors = true;
+      console.log('Formularz zawiera błędy.');
+    }
   }
 
 }
