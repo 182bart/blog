@@ -1,0 +1,26 @@
+nav {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    margin: 20px;
+    width: 100%;
+    background-color: #1c74b2;
+    ul {
+      list-style: none;
+  
+      li {
+        float: left;
+        margin-left: 10px;
+        button{
+            background-color:#1c74b2;
+            height: 40px;
+            color: white;
+            border: none;
+            border-right: 1px dashed #0a2b42;
+            float: 17px;
+           
+            cursor: pointer;
+        }
+      }
+    }
+  }

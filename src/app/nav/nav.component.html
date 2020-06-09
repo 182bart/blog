@@ -1,0 +1,18 @@
+<nav>
+    <ul>
+      <li><button routerLink="/">Strona Główna</button></li>
+      <li><button routerLink="/">Top5</button></li>
+      <li><button routerLink="/">Losuj 10 postów</button></li>
+      <li><button routerLink="/dodajPost">Dodaj Post</button></li>
+      <li> <form class="search">
+          <input placeholder= "wpisz tytuł" #query >
+          <button (click)="search(query.value)" routerLink="/">Szukaj</button>
+      </form>
+      </li>
+    </ul>
+  </nav>
+  
+  
+  <div style="clear: both;"></div>
+  
+  <router-outlet></router-outlet>

@@ -10,6 +10,8 @@ import { OopsComponent } from './oops/oops/oops.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routers';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { OnlyPostComponent } from './only-post/only-post.component';
+import { NavComponent } from './nav/nav.component';
 
 
 
@@ -20,6 +22,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     HomeComponent,
     AddPostComponent,
     OopsComponent,
+    OnlyPostComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

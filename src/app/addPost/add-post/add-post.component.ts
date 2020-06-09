@@ -18,8 +18,8 @@ export class AddPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.postForm = this.formBuilder.group({
-      Title: [''],
-      Text: [''],
+      title: [''],
+      text: [''],
     });
   }
 

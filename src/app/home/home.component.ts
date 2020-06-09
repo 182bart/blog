@@ -12,13 +12,21 @@ export class HomeComponent implements OnInit {
  postList ;
  query: string = '';
 
-  constructor(public postService: BlogServiceService) { }
+  constructor(public postService: BlogServiceService) {
+    this.postService.toQueryObs().subscribe((query: string) => {this.query = query})
+   }
 
   ngOnInit(): void {
     this.updateList();
   }
   updateList() {
-    this.postList = this.postService.fetchPost(this.query);
+    this.postList = this.postService.fetchPosts(this.query);
 }
+search(query) {
 
+  this.query = query;
+
+  this.updateList();
+
+  }
 }

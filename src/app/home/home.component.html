@@ -1,4 +1,4 @@
 <article *ngFor=" let post of postList|async">
     <p> {{(post.id)+(".     ")+(post.title)}}</p>
-    <div>{{post.text}}</div>
+    <div> <a routerLink="/post/{{post.id}}">{{post.text}}</a></div>
 </article>
