@@ -1,4 +1,13 @@
+<form class="search">
+    <input placeholder= "wpisz tytuł" #query >
+    <button (click)="search(query.value)" routerLink="/">Szukaj</button>
+</form>
+
 <article *ngFor=" let post of postList|async">
-    <p> {{(post.id)+(".     ")+(post.title)}}</p>
+    <div>
+    <p> {{post.title}}</p> 
+    <button (click)="del(post)">usuń</button>
+    </div>   
+    
     <div> <a routerLink="/post/{{post.id}}">{{post.text}}</a></div>
 </article>

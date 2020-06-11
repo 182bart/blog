@@ -10,7 +10,7 @@ import { Subject, Observable } from 'rxjs';
 export class BlogServiceService {
 
   url: string = 'http://localhost:3000/Posts';
-  queryObs = new Subject <string>();
+  
 
   constructor( public httpService: HttpClient, ) { }
    
@@ -23,12 +23,10 @@ export class BlogServiceService {
   fetchPost(postId){
     return this.httpService.get(`${this.url}/${postId}`).toPromise();
   }
-  search(query){
-    this.queryObs = query;
-  }
 
-    toQueryObs(): Observable <string> {
-    return this.queryObs.asObservable();
+  delete(post: Post){
+    return this.httpService.delete(`${this.url}/${post.id}`).toPromise();
+
   }
 }
 

@@ -12,9 +12,7 @@ export class HomeComponent implements OnInit {
  postList ;
  query: string = '';
 
-  constructor(public postService: BlogServiceService) {
-    this.postService.toQueryObs().subscribe((query: string) => {this.query = query})
-   }
+  constructor(public postService: BlogServiceService) {}
 
   ngOnInit(): void {
     this.updateList();
@@ -23,10 +21,13 @@ export class HomeComponent implements OnInit {
     this.postList = this.postService.fetchPosts(this.query);
 }
 search(query) {
-
+  // 1. aktualizujemy wartosc `query` (wyszukiwana fraza)
   this.query = query;
-
+  // 2. aktualizujemy liste kanapek (wykonujemy zapytanie do json-server)
   this.updateList();
-
-  }
+}
+del(post: Post){
+  this.postService.delete(post);
+  this.updateList();
+}
 }

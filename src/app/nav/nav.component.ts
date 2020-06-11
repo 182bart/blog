@@ -16,7 +16,5 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   
   }
-  search(){
-    this.postService.search(this.query);
-  }
+
 }
