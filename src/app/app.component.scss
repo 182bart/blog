@@ -1,24 +1,22 @@
+@import './../GlobalStyle/variables.scss';
 header {
-    font-size: 44px;
+    font-size: 60px;
 	font-weight: 700;
-	color: #ddd;
+	color: $background-element-color;
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin-top: 50px;
 	margin-bottom: 40px;
+	background-color: $background-color;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: $text-color;
+}
+.container{
+	
+	height: 100% !important;
+	position: relative;
+	background-color: $background-color;
 }
 
 
-
-
-aside {
-  float: right;
-  border: 1px solid black;
-}
-footer{
-    display: block;
-    border: chartreuse 1px solid;
-    text-align: center;
-    
-}

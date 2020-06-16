@@ -11,23 +11,22 @@ import { ActivatedRoute } from '@angular/router';
 export class OnlyPostComponent implements OnInit {
 
   post: Post = {
-    title: 'brak',
-    text: 'brak postu lub błąd serwera'
+    title: 'Błąd',
+    text: 'Brak postu lub błąd Serwera.'
   };
   constructor( public postService: BlogServiceService, public activatedRoute: ActivatedRoute ) { }
 
   ngOnInit(): void {
     const PostId = this.activatedRoute.snapshot.params.id;
-    
+
     this.postService.fetchPost(PostId)
             .then((post: Post) => {
-                console.log(post);
                 this.post = post;
             })
             .catch(error => {
                 console.log(error);
             });
-    
+
   }
 
 }

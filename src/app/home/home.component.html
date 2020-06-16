@@ -1,13 +1,29 @@
-<form class="search">
-    <input placeholder= "wpisz tytuł" #query >
-    <button (click)="search(query.value)" routerLink="/">Szukaj</button>
-</form>
+<nav  > 
+    <div class="row justify-content-between" >
+        <div class="col-sm-5 ">
+            <blg-nav></blg-nav>
+        </div>
+        <div class="col-sm-7 ">
+            <form  >
+                <div class="row align-items">
+        <div class="col-sm-7 col-lg-7 " >
+          <input placeholder= "Wpisz Tytuł Postu" #query >
+        </div>
+        <div class="col-sm-5 col-lg-5-end " >
+            <button (click)="search(query.value)" routerLink="/">Szukaj</button>
+        </div>
+      </div> 
+            </form>
+        </div>
+    </div>
+</nav>
 
-<article *ngFor=" let post of postList|async">
-    <div>
-    <p> {{post.title}}</p> 
-    <button (click)="del(post)">usuń</button>
-    </div>   
-    
-    <div> <a routerLink="/post/{{post.id}}">{{post.text}}</a></div>
-</article>
+<div >
+    <article *ngFor=" let post of postList|async" >
+        <div class=" title d-flex justify-content-between">
+        <p >  {{post.title|titlecase}}</p> 
+        <button (click)="del(post)" ><img src="../../assets/dustbin.svg" >  </button>
+        </div>      
+        <div class="text"> <a routerLink="/post/{{post.id}}">{{post.text|slice:0:250}}...</a></div>
+    </article>
+</div>

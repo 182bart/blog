@@ -12,6 +12,7 @@ import { appRoutes } from './app.routers';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { OnlyPostComponent } from './only-post/only-post.component';
 import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -24,6 +25,7 @@ import { NavComponent } from './nav/nav.component';
     OopsComponent,
     OnlyPostComponent,
     NavComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Query } from '@angular/core';
+import { Component} from '@angular/core';
 import { BlogServiceService } from 'src/Service/blog-service.service';
 
 @Component({
@@ -6,15 +6,8 @@ import { BlogServiceService } from 'src/Service/blog-service.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
+export class NavComponent  {
 
   query: string ;
   constructor(public postService: BlogServiceService) { }
-
-
-
-  ngOnInit(): void {
-  
-  }
-
 }
